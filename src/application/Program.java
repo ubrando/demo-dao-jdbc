@@ -10,6 +10,9 @@ import model.entities.Seller;
 
 public class Program {
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
 	
@@ -39,6 +42,13 @@ public class Program {
 		Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", new Date(), 4000.0, dep);
 		sellerDao.insert(newSeller);
 		System.out.println("Inserted! New id =" + newSeller.getId());
+		
+		System.out.println("\n=== TEST 5: seller update ===");
+		seller = sellerDao.findById(1);
+		seller.setName("Martha Waine");
+		sellerDao.update(seller);
+		System.out.println("Update completed!");
+
 	}
 
 }
